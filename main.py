@@ -1,11 +1,3 @@
-# main.py
-# A Flask API to get low-stock alerts for a company.
-# To run:
-# 1. pip install Flask
-# 2. python main.py
-# 3. Access the endpoint in your browser or with a tool like Postman:
-#    http://127.0.0.1:5000/api/companies/1/alerts/low-stock
-
 from flask import Flask, jsonify
 import sqlite3
 import datetime
