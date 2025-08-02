@@ -41,36 +41,4 @@ def create_product():
 
 
 # PART-2: DATABASE DESIGN 
-erDiagram
-    Companies {
-        int company_id PK
-        varchar name
-    }
 
-    Warehouses {
-        int warehouse_id PK
-        int company_id FK
-        varchar name
-    }
-
-    Products {
-        int product_id PK
-        varchar name
-        boolean is_bundle
-    }
-
-    Inventory {
-        int product_id FK
-        int warehouse_id FK
-        int quantity
-    }
-
-    ProductBundles {
-        int bundle_id FK "Links to Products"
-        int component_id FK "Links to Products"
-    }
-
-    Companies ||--o{ Warehouses : "owns"
-    Products  ||--|{ Inventory : "has stock of"
-    Warehouses ||--|{ Inventory : "stores"
-    Products }|..o{ ProductBundles : "is made of"
