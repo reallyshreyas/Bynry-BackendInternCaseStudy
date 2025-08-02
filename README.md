@@ -38,7 +38,3 @@ def create_product():
     #Commit now both Product and Inventory together
     db.session.commit()
     return {"message": "Product created", "product_id": product.id}
-
-
-# PART-2: DATABASE DESIGN 
-
