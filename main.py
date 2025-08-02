@@ -54,19 +54,7 @@ db_conn = setup_database()
 
 @app.route('/api/companies/<int:company_id>/alerts/low-stock', methods=['GET'])
 def get_low_stock_alerts(company_id):
-    """
-    Returns a simplified list of products that are below their low-stock threshold
-    for a given company.
-
-    This simplified version checks stock level per warehouse against the threshold,
-    and does not check for recent sales or calculate days until stockout.
-    """
     cursor = db_conn.cursor()
-
-    # A single, simpler query to get all necessary data at once.
-    # It joins inventory, products, warehouses, and suppliers.
-    # The check `i.quantity < p.low_stock_threshold` is a simplification,
-    # as it checks stock per warehouse, not total stock across all warehouses.
     query = """
         SELECT
             p.product_id,
