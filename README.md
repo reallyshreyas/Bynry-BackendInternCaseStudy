@@ -1,5 +1,4 @@
 # Bynry-BackendInternCaseStudy
-# Bynry-BackendInternCaseStudy
 
 # PART 1 - CODE REVIEW AND DEBUGGING
 
